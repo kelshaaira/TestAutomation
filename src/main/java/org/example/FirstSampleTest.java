@@ -119,6 +119,7 @@ public class FirstSampleTest{
         driver.findElement(AppiumBy.id("et_email")).sendKeys("ariana@gmail.com");
         driver.findElement(AppiumBy.id("et_password")).sendKeys("Ariana123!");
         driver.hideKeyboard();
+        
     }
 
     private static AndroidDriver getAndroidDriver() throws MalformedURLException {
