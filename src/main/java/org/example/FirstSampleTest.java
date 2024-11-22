@@ -45,6 +45,7 @@ public class FirstSampleTest{
         AndroidDriver driver = getAndroidDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         login(driver);
+        driver.findElement(AppiumBy.id("btn_login")).click();
         driver.findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
                         ".setAsHorizontalList()" +
@@ -112,14 +113,12 @@ public class FirstSampleTest{
         driver.findElement(AppiumBy.id("et_email")).sendKeys("ariana@gmail.com");
         driver.findElement(AppiumBy.id("et_password")).sendKeys("Ariana123");
         driver.hideKeyboard();
-
     }
 
     private void login(AndroidDriver driver) {
         driver.findElement(AppiumBy.id("et_email")).sendKeys("ariana@gmail.com");
         driver.findElement(AppiumBy.id("et_password")).sendKeys("Ariana123!");
         driver.hideKeyboard();
-        
     }
 
     private static AndroidDriver getAndroidDriver() throws MalformedURLException {
@@ -127,11 +126,13 @@ public class FirstSampleTest{
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appium:automationName","UiAutomator2");
-        capabilities.setCapability("appium:deviceName","5200802feeb735cf");
+        capabilities.setCapability("deviceName", "jackpotltexx");
+        capabilities.setCapability("udid", "5200802feeb735cf");
         capabilities.setCapability("appPackage", "com.example.alfaresto_customersapp");
         capabilities.setCapability("appActivity", "com.example.alfaresto_customersapp.ui.components.loginPage.LoginActivity");
 
-        driver = new AndroidDriver(new URL("http://10.4.76.230:4723"), capabilities);
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
+
         return driver;
     }
 }
