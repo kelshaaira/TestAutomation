@@ -1,12 +1,10 @@
-package org.example;
-
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import org.junit.jupiter.api.Test;
 
 public class FirstSampleTest{
     //Positive Case
